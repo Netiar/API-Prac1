@@ -17,7 +17,7 @@ export class GetdataService {
   }
   
   getGif(){
-    return this.dataFetcher.get<any>('api.giphy.com/v1/gifs/search?api_key=6khsOXZPUD2vx5W285DLz1I3Q1vJdKN1&q=football&limit=10')
+    return this.dataFetcher.get<any>('https://api.giphy.com/v1/gifs/search?api_key=6khsOXZPUD2vx5W285DLz1I3Q1vJdKN1&q=onepiece&limit=10')
   }
 
 

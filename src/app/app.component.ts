@@ -3,6 +3,7 @@ import { GetdataService } from './getdata.service';
 import { Mytype} from './mytype';
 import { cofee } from './ping';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,7 +11,12 @@ import { cofee } from './ping';
 })
 export class AppComponent {
   title = 'w2';
-  CofeeObj: cofee={file:"https://coffee.alexflipnote.dev/si6lqp_fnlI_coffee.jpg"};
+  giffyDetail:any;
+  gifDetails:any;
+  CofeeObj: cofee={
+    file: "https://coffee.alexflipnote.dev/si6lqp_fnlI_coffee.jpg",
+    data: undefined
+  };
 
   constructor(private mydata: GetdataService){
 
@@ -20,7 +26,13 @@ export class AppComponent {
     console.log(this.CofeeObj); 
 
   }
-   
+  getGif(){ 
+    this.mydata.getData().subscribe(data =>{console.log(data)
+     
+     this.gifDetails=data.data
+
+    })
+  } 
 
   
 
